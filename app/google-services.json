@@ -1,0 +1,43 @@
+{
+  "project_info": {
+    "project_number": "370499418000",
+    "project_id": "courier-service-app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370499418000:android:ccfa9b9f03b5466e",
+        "android_client_info": {
+          "package_name": "com.view9.couriercustomer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "370499418000-ldj7sfbvggjabms0r74d202lo5ummj9q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMEsFSVT39uPANggqZ4LCUqRFHgo4ll9k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-114241052-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

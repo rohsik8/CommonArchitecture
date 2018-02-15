@@ -1,0 +1,159 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="DialogStyle" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="colorAccent">@android:color/white</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:background">@android:color/transparent</item>
+        <!--<item name="android:windowAnimationStyle">@style/PopupAnimation1</item>-->
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/white</item>
+
+    </style>
+
+    <style name="ContentTitle" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">Montserrat</item>
+        <item name="android:textColor">#DE000000</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="SetB" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">Montserrat</item>
+        <item name="android:textColor">#FFA2A2A2</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="SubjectsAvailable" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">Montserrat</item>
+        <item name="android:textColor">#DE000000</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ViewAll" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">Montserrat</item>
+        <item name="android:textColor">#FF737373</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="perc" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">Montserrat</item>
+        <item name="android:textColor">#FF673AB7</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="signIn" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="progress" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">Montserrat</item>
+        <item name="android:textColor">#FFBBBBBB</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="ForgotPassword" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">Montserrat</item>
+        <item name="android:textColor">#87FFFFFF</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="SignInButton" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">Montserrat</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="HintTextCopy" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textColor">#DEFFFFFF</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="CreateAnAccount" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textColor">#87FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+
+    </style>
+
+    <style name="Value" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">Montserrat</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorHint">@color/white</item>
+
+    </style>
+
+    <style name="editText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#B0FFFFFF</item>
+        <item name="android:textColorHint">@color/hintColor</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+
+    <style name="Congratulations" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">Montserrat</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="YourAccountIsSuce" parent="@android:style/TextAppearance">
+
+        <item name="android:fontFamily">Montserrat</item>
+        <item name="android:textColor">#DEFFFFFF</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Register" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">Montserrat</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="RegistrationCanO" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">FontAwesome</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="time" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textColor">#FFACACAC</item>
+        <item name="android:textSize">34sp</item>
+    </style>
+
+    <style name="Question3Of15" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">Montserrat</item>
+        <item name="android:textColor">#DE000000</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="optionsStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#FF3F3F3F</item>
+        <item name="android:buttonTint">#FF000000</item>
+        <item name="android:layout_marginBottom">@dimen/_10sdp</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+</resources>
