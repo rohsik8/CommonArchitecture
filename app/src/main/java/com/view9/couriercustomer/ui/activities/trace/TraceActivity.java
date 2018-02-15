@@ -1,4 +1,4 @@
-package com.view9.couriercustomer.ui.activities.login;
+package com.view9.couriercustomer.ui.activities.trace;
 
 import android.Manifest;
 import android.content.Context;
@@ -10,33 +10,34 @@ import android.support.v7.app.AppCompatActivity;
 
 
 import com.view9.couriercustomer.application.dagger.CourierCustomerApplication;
-import com.view9.couriercustomer.databinding.LoginBinding;
-import com.view9.couriercustomer.ui.activities.login.dagger.DaggerLoginComponent;
-import com.view9.couriercustomer.ui.activities.login.dagger.LoginModule;
-import com.view9.couriercustomer.ui.activities.login.mvp.LoginPresenter;
-import com.view9.couriercustomer.ui.activities.login.mvp.LoginView;
+
+import com.view9.couriercustomer.databinding.TraceLayoutBinding;
+import com.view9.couriercustomer.ui.activities.trace.dagger.DaggerTraceComponent;
+import com.view9.couriercustomer.ui.activities.trace.dagger.TraceModule;
+import com.view9.couriercustomer.ui.activities.trace.mvp.TracePresenter;
+import com.view9.couriercustomer.ui.activities.trace.mvp.TraceView;
 import com.view9.couriercustomer.utils.GeneralUtils;
 
 import javax.inject.Inject;
 
 
-public class LoginActivity extends AppCompatActivity {
+public class TraceActivity extends AppCompatActivity {
 
 
     @Inject
-    LoginView loginView;
+    TraceView traceView;
 
     @Inject
-    LoginPresenter loginPresenter;
+    TracePresenter tracePresenter;
 
-    LoginBinding loginBinding;
+    TraceLayoutBinding loginBinding;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        DaggerLoginComponent.builder()
+        DaggerTraceComponent.builder()
                 .appComponent(CourierCustomerApplication.get(this).appComponent())
-                .loginModule(new LoginModule(this))
+                .traceModule(new TraceModule(this))
                 .build()
                 .inject(this);
 
@@ -45,13 +46,13 @@ public class LoginActivity extends AppCompatActivity {
         if(!GeneralUtils.hasPermissions(this, PERMISSIONS)){
             ActivityCompat.requestPermissions(this, PERMISSIONS, 1);
         }
-        loginPresenter.onCreate();
+        tracePresenter.onCreate();
 
 
     }
 
     public static void start(Context context){
-        context.startActivity(new Intent(context,LoginActivity.class));
+        context.startActivity(new Intent(context,TraceActivity.class));
     }
 
 
@@ -63,6 +64,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        loginPresenter.onDestroy();
+        tracePresenter.onDestroy();
     }
 }

@@ -11,9 +11,6 @@ import com.view9.couriercustomer.utils.Constants;
 
 import timber.log.Timber;
 
-/**
- * Created by dell on 8/7/2017.
- */
 
 public class CourierCustomerApplication extends Application{
 

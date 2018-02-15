@@ -8,7 +8,7 @@ import android.support.annotation.NonNull;
 import android.widget.FrameLayout;
 
 import com.view9.couriercustomer.R;
-import com.view9.couriercustomer.ui.activities.login.LoginActivity;
+import com.view9.couriercustomer.ui.activities.trace.TraceActivity;
 
 
 @SuppressLint("ViewConstructor")
@@ -31,8 +31,8 @@ public class SplashView extends FrameLayout {
 
     }
 
-    public void startLogin() {
-        LoginActivity.start(activity);
+    public void startTrace() {
+        TraceActivity.start(activity);
         activity.finish();
     }
 

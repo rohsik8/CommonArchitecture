@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 
 
 import com.view9.couriercustomer.application.dagger.CourierCustomerApplication;
+
 import com.view9.couriercustomer.ui.activities.splash.dagger.DaggerSplashComponent;
 import com.view9.couriercustomer.ui.activities.splash.dagger.SplashModule;
 import com.view9.couriercustomer.ui.activities.splash.mvp.SplashPresenter;

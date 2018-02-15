@@ -4,7 +4,6 @@ package com.view9.couriercustomer.ui.activities.splash.mvp;
 
 
 import com.view9.couriercustomer.ext.storage.PreferencesManager;
-import com.view9.couriercustomer.utils.Constants;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -45,12 +44,8 @@ public class SplashPresenter {
         return new DisposableObserver<Boolean>() {
             @Override
             public void onNext(Boolean aBoolean) {
-                if(preferencesManager.get(Constants.COOKIE).length()>0  ) {
-                    splashView.startHome();
-                }else{
-                    splashView.startLogin();
-                }
 
+                    splashView.startTrace();
             }
 
             @Override

@@ -1,11 +1,11 @@
-package com.view9.couriercustomer.ui.activities.login.mvp;
+package com.view9.couriercustomer.ui.activities.trace.mvp;
 
 
 import android.text.TextUtils;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
 import com.view9.couriercustomer.ext.storage.PreferencesManager;
-import com.view9.couriercustomer.ui.activities.login.loginResponse.LoginResponse;
+import com.view9.couriercustomer.ui.activities.trace.TraceResponse.LoginResponse;
 import com.view9.couriercustomer.utils.Constants;
 import com.view9.couriercustomer.utils.GeneralUtils;
 
@@ -23,10 +23,10 @@ import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 
-public class LoginPresenter {
+public class TracePresenter {
 
-    private final LoginView loginView;
-    private final LoginModel loginModel;
+    private final TraceView traceView;
+    private final TraceModel traceModel;
     DisposableObserver<Boolean> loginObserver;
     PreferencesManager preferencesManager;
 
@@ -34,22 +34,22 @@ public class LoginPresenter {
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
 
 
-    public LoginPresenter(LoginView loginView, LoginModel loginModel, PreferencesManager preferencesManager) {
-        this.loginView = loginView;
-        this.loginModel = loginModel;
+    public TracePresenter(TraceView traceView, TraceModel traceModel, PreferencesManager preferencesManager) {
+        this.traceView = traceView;
+        this.traceModel = traceModel;
         this.preferencesManager = preferencesManager;
 
     }
 
 
     public void onCreate() {
-        formValidation();
-        loginButtonObservable();
+       /* formValidation();
+        loginButtonObservable();*/
 
     }
 
 
-    private boolean validatePassword(String password) {
+   /* private boolean validatePassword(String password) {
         return password.length() > 3;
     }
 
@@ -57,8 +57,8 @@ public class LoginPresenter {
     private void formValidation() {
 
 
-        loginView.mobileCharSequenceObservable()
-                .doOnNext(charSequence -> loginView.hideMobileError())
+        traceView.mobileCharSequenceObservable()
+                .doOnNext(charSequence -> traceView.hideMobileError())
                 .debounce(400, TimeUnit.MILLISECONDS)
                 .filter(charSequence -> !TextUtils.isEmpty(charSequence))
                 .observeOn(AndroidSchedulers.mainThread()) // UI Thread
@@ -83,16 +83,16 @@ public class LoginPresenter {
                     public void onNext(CharSequence charSequence) {
                         boolean ismobileValid = validatePassword(charSequence.toString());
                         if (!ismobileValid) {
-                            loginView.showMobileError();
+                            traceView.showMobileError();
                         } else {
-                            loginView.hideMobileError();
+                            traceView.hideMobileError();
                         }
                     }
                 });
 
 
-        loginView.passwordCharSequenceObservable()
-                .doOnNext(charSequence -> loginView.hidePasswordError())
+        traceView.passwordCharSequenceObservable()
+                .doOnNext(charSequence -> traceView.hidePasswordError())
                 .debounce(400, TimeUnit.MILLISECONDS)
                 .filter(charSequence -> !TextUtils.isEmpty(charSequence))
                 .observeOn(AndroidSchedulers.mainThread()) // UI Thread
@@ -117,48 +117,15 @@ public class LoginPresenter {
                     public void onNext(CharSequence charSequence) {
                         boolean isPasswordValid = validatePassword(charSequence.toString());
                         if (!isPasswordValid) {
-                            loginView.showPasswordError();
+                            traceView.showPasswordError();
                         } else {
-                            loginView.hidePasswordError();
+                            traceView.hidePasswordError();
                         }
                     }
                 });
 
 
-        Observable.combineLatest(
-                loginView.passwordCharSequenceObservable(),
-                loginView.mobileCharSequenceObservable(),
 
-                (password, mobile) -> {
-
-                    boolean isPasswordValid = validatePassword(password.toString());
-                    boolean isMobileValid = validatePassword(mobile.toString());
-
-                    return isPasswordValid && isMobileValid;
-
-                }).observeOn(AndroidSchedulers.mainThread()) // UI Thread
-                .subscribe(new Observer<Boolean>() {
-
-                    @Override
-                    public void onError(Throwable e) {
-                        e.printStackTrace();
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(Boolean validFields) {
-                        loginView.enableButton(validFields);
-                    }
-                });
 
     }
 
@@ -169,36 +136,36 @@ public class LoginPresenter {
 
             @Override
             public void onNext(LoginResponse loginResponse) {
-                loginModel.saveData(Constants.COOKIE, loginResponse.getData().getSessionName() + "=" + loginResponse.getData().getSessid());
-                loginModel.saveData(Constants.TOKEN, loginResponse.getData().getToken());
-                loginModel.saveData(Constants.USERID, loginResponse.getData().getUser().getUid());
-                loginModel.saveData(Constants.FIRSTNAME, loginResponse.getData().getUser().getName());
-                loginModel.saveData(Constants.EMAIL, loginResponse.getData().getUser().getMail());
-                loginView.startHome();
+                traceModel.saveData(Constants.COOKIE, loginResponse.getData().getSessionName() + "=" + loginResponse.getData().getSessid());
+                traceModel.saveData(Constants.TOKEN, loginResponse.getData().getToken());
+                traceModel.saveData(Constants.USERID, loginResponse.getData().getUser().getUid());
+                traceModel.saveData(Constants.FIRSTNAME, loginResponse.getData().getUser().getName());
+                traceModel.saveData(Constants.EMAIL, loginResponse.getData().getUser().getMail());
+                traceView.startHome();
             }
 
             @Override
             public void onError(Throwable e) {
                 if (e instanceof HttpException) {
                     ResponseBody responseBody = ((HttpException) e).response().errorBody();
-                    loginView.showMessage(GeneralUtils.getErrorMessage(responseBody));
+                    traceView.showMessage(GeneralUtils.getErrorMessage(responseBody));
 
-                    //loginModel.startDashboard();
+                    //traceModel.startDashboard();
                 } else if (e instanceof SocketTimeoutException) {
-                    loginView.showMessage("Time Out");
+                    traceView.showMessage("Time Out");
 
                 } else if (e instanceof IOException) {
-                    loginView.showMessage("Please check your network connection");
-                    // loginModel.startDashboard();
+                    traceView.showMessage("Please check your network connection");
+                    // traceModel.startDashboard();
 
                 } else {
                     //todo changes
-                    loginView.showMessage(e.getMessage());
-                    // loginModel.startDashboard();
+                    traceView.showMessage(e.getMessage());
+                    // traceModel.startDashboard();
 
                 }
                 loginButtonObservable();
-                loginView.startHomeDelivery();
+                traceView.startHomeDelivery();
 
             }
 
@@ -209,17 +176,17 @@ public class LoginPresenter {
         };
 
 
-        loginView.loginButtonObservable()
-                .doOnNext(__ -> loginView.showProgressDialog(true))
-                .map(__ -> loginView.loginParams())
+        traceView.loginButtonObservable()
+                .doOnNext(__ -> traceView.showProgressDialog(true))
+                .map(__ -> traceView.loginParams())
                 .observeOn(Schedulers.io())
-                .switchMap(loginModel::loginObservable)
+                .switchMap(traceModel::loginObservable)
                 .observeOn(AndroidSchedulers.mainThread())
-                .doOnEach(__ -> loginView.showProgressDialog(false))
+                .doOnEach(__ -> traceView.showProgressDialog(false))
                 .subscribe(disposableObserver);
 
     }
-
+*/
 
     public void onDestroy() {
         compositeDisposable.clear();

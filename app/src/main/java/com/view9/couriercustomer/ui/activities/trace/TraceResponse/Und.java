@@ -1,10 +1,10 @@
 
-package com.view9.couriercustomer.ui.activities.login.loginResponse;
+package com.view9.couriercustomer.ui.activities.trace.TraceResponse;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Und_ {
+public class Und {
 
     @SerializedName("value")
     @Expose

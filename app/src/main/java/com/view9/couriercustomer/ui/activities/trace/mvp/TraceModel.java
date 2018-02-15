@@ -1,4 +1,4 @@
-package com.view9.couriercustomer.ui.activities.login.mvp;
+package com.view9.couriercustomer.ui.activities.trace.mvp;
 
 
 import android.app.Activity;
@@ -6,26 +6,26 @@ import android.app.Activity;
 
 import com.view9.couriercustomer.application.networkModels.CourierCustomerNetwork;
 import com.view9.couriercustomer.ext.storage.PreferencesManager;
-import com.view9.couriercustomer.ui.activities.login.LoginParams;
-import com.view9.couriercustomer.ui.activities.login.loginResponse.LoginResponse;
+import com.view9.couriercustomer.ui.activities.trace.TraceParams;
+import com.view9.couriercustomer.ui.activities.trace.TraceResponse.LoginResponse;
 
 import io.reactivex.Observable;
 
-public class LoginModel {
+public class TraceModel {
 
     private final Activity activity;
     private final PreferencesManager preferencesManager;
     private final CourierCustomerNetwork courierNetwork;
 
-    public LoginModel(Activity activity, PreferencesManager preferencesManager, CourierCustomerNetwork courierNetwork) {
+    public TraceModel(Activity activity, PreferencesManager preferencesManager, CourierCustomerNetwork courierNetwork) {
         this.activity = activity;
         this.preferencesManager = preferencesManager;
         this.courierNetwork = courierNetwork;
     }
 
 
-    public Observable<LoginResponse> loginObservable(LoginParams loginParams) {
-        return courierNetwork.postLoginObservable(loginParams);
+    public Observable<LoginResponse> loginObservable(TraceParams traceParams) {
+        return courierNetwork.postLoginObservable(traceParams);
     }
 
 
