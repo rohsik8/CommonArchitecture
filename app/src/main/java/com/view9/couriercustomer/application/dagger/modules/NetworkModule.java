@@ -60,8 +60,8 @@ public class NetworkModule {
                 .addInterceptor(chain -> {
                     Request request = chain.request();
                     request = request.newBuilder()
-                            .addHeader("Cookie", prefs.get(Constants.COOKIE))
-                            .addHeader("X-CSRF-Token", prefs.get(Constants.TOKEN))
+                            //.addHeader("Cookie", prefs.get(Constants.COOKIE))
+                            //.addHeader("X-CSRF-Token", prefs.get(Constants.TOKEN))
                             .addHeader("Content-Type", "application/json")
                             .build();
                     return chain.proceed(request);

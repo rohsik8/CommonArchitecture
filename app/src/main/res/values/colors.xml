@@ -7,4 +7,8 @@
     <color name="hintColor">#B0FFFFFF</color>
     <color name="white">#FFFFFFFF</color>
     <color name="cardBackground">#FFF4F4F4</color>
+
+    <color name="green">#00BB44</color>
+
+
 </resources>

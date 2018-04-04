@@ -30,7 +30,7 @@ public class TraceActivity extends AppCompatActivity {
     @Inject
     TracePresenter tracePresenter;
 
-    TraceLayoutBinding loginBinding;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

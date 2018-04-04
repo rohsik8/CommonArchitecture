@@ -3,56 +3,52 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
-        android:paddingStart="@dimen/_15sdp"
+        android:background="@drawable/trace_bg"
+        android:orientation="vertical"
         android:paddingEnd="@dimen/_15sdp"
 
-        android:orientation="vertical">
+        android:paddingStart="@dimen/_15sdp">
 
 
-        <ImageView
+        <EditText
+            android:id="@+id/et_track"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_80sdp"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/_35sdp"
-            android:src="@drawable/loginn"
-           />
-
-
-
-<EditText
-    android:id="@+id/et_track"
-    android:layout_width="match_parent"
-    android:layout_marginTop="@dimen/_100sdp"
-    android:layout_marginBottom="@dimen/_8sdp"
-    android:hint="Consignment Number..."
-  android:paddingLeft="@dimen/_12sdp"
-    android:textSize="@dimen/_11sdp"
-    android:textColorHint="@color/hintColor"
-    android:background="@drawable/edittext_background"
-    android:layout_height="wrap_content"
-    />
-
-
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_trace"
+            android:layout_marginBottom="@dimen/_40sdp"
+            android:gravity="center_horizontal"
+            android:hint="Consignment Number..."
+            android:elevation="@dimen/_2sdp"
+            android:inputType="number"
+            android:paddingLeft="@dimen/_12sdp"
+            android:textSize="@dimen/_14sdp" />
 
         <Button
             android:id="@+id/btn_trace"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_30sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_above="@+id/tv_call_helpline"
+            android:layout_marginBottom="@dimen/_30sdp"
             android:layout_marginTop="@dimen/_20sdp"
-            android:elevation="10dp"
-            android:background="@drawable/trace_background"
-            android:enabled="false"
-            android:textColor="@color/white"
-            android:layout_gravity="center"
-            android:lineSpacingMultiplier="1.29"
-            android:text="Trace" />
+            android:background="@drawable/btn_trace"
+            />
+
+        <TextView
+            android:id="@+id/tv_call_helpline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:textSize="@dimen/_11sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:text="Forgot? Call Helpline"
+            android:textColor="#000" />
 
 
-    </LinearLayout>
+    </RelativeLayout>
 </layout>
 
 

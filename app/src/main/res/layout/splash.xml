@@ -7,26 +7,17 @@
 
     <ImageView
         android:id="@+id/splash_logo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_126sdp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitXY"
+        android:layout_marginTop="-20dp"
+        android:layout_marginBottom="-20dp"
+        android:src="@drawable/splash"
+
         />
 
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/splash_logo"
-        android:layout_marginTop="@dimen/_8sdp"
-         />
 
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/_minus35sdp"
-       />
 
 
 </RelativeLayout>

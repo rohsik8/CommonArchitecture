@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_shipment"
+        android:layout_height="180dp">
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+           android:layout_margin="@dimen/_16sdp"
+            android:background="@drawable/left_arrow"/>
+
+            <ImageView
+                android:id="@+id/iv_booked"
+                android:background="@drawable/dispatched_icon"
+                android:layout_centerHorizontal="true"
+                android:layout_width="@dimen/_180sdp"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:layout_height="@dimen/_100sdp" />
+
+
+    </RelativeLayout>
+
+
+
+            <RelativeLayout
+
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rl_mid"
+                android:layout_below="@+id/rl_top"
+                android:layout_margin="@dimen/_8sdp">
+
+
+                <TextView
+                    android:id="@+id/tv_con"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:text="Consignment Status for"/>
+
+                <TextView
+                    android:id="@+id/billno"
+                    android:layout_below="@+id/tv_con"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:text="Bill no: "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_bill_no"
+                    android:layout_below="@+id/tv_con"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/billno"
+                    android:text="n/a "
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/origin"
+                    android:layout_below="@+id/tv_bill_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:text="Origin: "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_origin"
+                    android:layout_below="@+id/tv_bill_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                  android:layout_marginBottom="@dimen/_8sdp"
+                    android:layout_toRightOf="@id/origin"
+                    android:text="n/a "
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/rl_mid"
+        android:id="@+id/rv_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+    <RelativeLayout
+        android:id="@+id/loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@android:color/transparent">
+
+        <ProgressBar
+            android:id="@+id/loading"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
+</layout>

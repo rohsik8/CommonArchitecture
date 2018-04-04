@@ -1,10 +1,13 @@
 
-package com.view9.couriercustomer.ui.activities.trace.TraceResponse;
+package com.view9.couriercustomer.ui.activities.OrderStatus.orderResponse;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LoginResponse {
+import java.io.Serializable;
+
+public class OrderResponse implements Serializable
+{
 
     @SerializedName("success")
     @Expose
@@ -12,12 +15,10 @@ public class LoginResponse {
     @SerializedName("message")
     @Expose
     private String message;
-    @SerializedName("empty")
-    @Expose
-    private Boolean empty;
     @SerializedName("data")
     @Expose
     private Data data;
+    private final static long serialVersionUID = 3063618780968683838L;
 
     public Boolean getSuccess() {
         return success;
@@ -33,14 +34,6 @@ public class LoginResponse {
 
     public void setMessage(String message) {
         this.message = message;
-    }
-
-    public Boolean getEmpty() {
-        return empty;
-    }
-
-    public void setEmpty(Boolean empty) {
-        this.empty = empty;
     }
 
     public Data getData() {
