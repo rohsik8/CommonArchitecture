@@ -1,14 +1,14 @@
 {
   "project_info": {
     "project_number": "370499418000",
-    "project_id": "courier-service-app"
+    "project_id": "tia-service-app"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:370499418000:android:ccfa9b9f03b5466e",
         "android_client_info": {
-          "package_name": "com.view9.couriercustomer"
+          "package_name": "com.view9.tia"
         }
       },
       "oauth_client": [
